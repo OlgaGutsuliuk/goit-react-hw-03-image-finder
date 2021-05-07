@@ -4,6 +4,7 @@ import ImageGallery from "./imageGallery/ImageGallery";
 import Searchbar from "./searchbar/Searchbar";
 import Button from "./button/Button";
 import Modal from "./modal/Modal";
+import Loader from "react-loader-spinner";
 
 class App extends Component {
   state = {
@@ -70,7 +71,7 @@ class App extends Component {
       <>
         {error && <h2>ХАЛЕПА</h2>}
         <Searchbar onChangeQuery={this.onChangeQuery} />
-        {isLoading && <h2>Загружаю момент</h2>}
+        {isLoading && <Loader />}
 
         <ImageGallery hits={hits} getImage={this.getImage} />
         {hits.length > 0 && <Button fetchArticles={this.fetchArticles} />}
