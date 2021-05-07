@@ -11,16 +11,16 @@ class Modal extends Component {
     window.addEventListener('keydown', this.handleKeyDown)
   }
   
-  componentWillMount() {
+  componentWillUnmount() {
    window.removeEventListener('keydown', this.handleKeyDown) 
   }
 
 
-handleKeyDown = e => {
+  handleKeyDown = e => {
   if (e.code === "Escape") {
          console.log('Escape');
         this.props.onClose()  
-    }
+  }
 }
   handleOverlay = (e) => {
     console.log('bac');
